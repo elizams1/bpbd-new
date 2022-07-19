@@ -1,0 +1,26 @@
+.detailArtikel {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.split-view-detail {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-top: 25px;
+  gap: 30px;
+}
+
+.detail-article-title {
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+
+.detail-content {
+  text-align: justify;
+}

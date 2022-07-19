@@ -1,0 +1,54 @@
+@media screen and (max-width: 1400px){
+  .split-view-list-article {
+    flex-direction: column;
+    align-items: center;
+  }
+  .left-view-list-article {
+    margin-bottom: 25px;
+    width: 100% !important;
+  }
+  .thePicture {
+    height: 250px !important;
+    ;
+  }
+}
+.articleTitle{
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+}
+.listArticle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-direction: column;
+  align-items: center;
+}
+.split-view-list-article {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  width: 80%;
+  margin-top: 25px;
+}
+.the-tools-article {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.the-search-article {
+  display: flex;
+  gap: 10px;
+}
+.the-article{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+}

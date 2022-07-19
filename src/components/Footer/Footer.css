@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  width: 100%;
+  background-color: #075098;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+}
+.aboutUs, .contact{
+  width: 50%;
+}
+.aboutUs{
+  text-align: right;
+}
+.title{
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+.title1 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin: 0px;
+}
+.text {
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  margin: 0px 0px 10px;
+}

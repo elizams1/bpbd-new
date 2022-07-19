@@ -1,0 +1,10 @@
+.theCarousel {
+  border-radius: 10px;
+  height: 400px;
+}
+.carouselTittle {
+  font-weight: 600 !important;
+  font-size: 18px;
+  text-shadow: -1px -1px 0 rgb(7, 80, 152, 0.3), 1px -1px 0 rgb(7, 80, 152, 0.3), -1px 1px 0 rgb(7, 80, 152, 0.5), 1px 1px 0 rgb(7, 80, 152, 0.5);
+  letter-spacing: 2px;
+}

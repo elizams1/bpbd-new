@@ -1,0 +1,23 @@
+.visiMisi-page{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.split-view-visiMisi{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin-top: 25px;
+  gap: 20px;
+  align-items: center;
+}
+.visiMisi-title{
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.visiMisi-content {
+  text-align: justify;
+}

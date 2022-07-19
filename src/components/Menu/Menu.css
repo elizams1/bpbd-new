@@ -1,0 +1,100 @@
+@media screen and (max-width: 1400px) {
+  .the-list-menu, .the-menu-1{
+    display: none !important;
+  }
+  .drawer{
+    display: flex !important;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .theName1{
+    display: none !important;
+  }
+  .theName{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50%;
+  }
+  .the-menu-2{
+    display: flex;
+    align-items: center;
+    width: 80%;
+  }
+  .drawer{
+    width: 100%;
+  }
+  .theDrawer {
+    display: flex !important;
+  }
+  .menuDrawer{
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #075098;
+    text-align: center;
+  }
+  .menuDrawer:Hover{
+    background-color: #075098;
+    opacity: 0.5;
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+.theMenu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: #075098;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 25px;
+}
+.the-menu-1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+
+.theName1{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+.the-list-menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.drawer{
+  display: none;
+}
+.theDrawer{
+  display: none;
+}
+.menuDrawer {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #075098;
+  text-align: center;
+}
+.menuDrawer:Hover {
+  background-color: #075098;
+  opacity: 0.5;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+.nameInstansi {
+  color: #fff;
+  margin: 0px;
+}
+.logoMenu {
+  width: 10%;
+}
