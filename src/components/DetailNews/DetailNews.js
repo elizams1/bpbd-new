@@ -23,8 +23,8 @@ function DetailNews() {
         .catch(function (error) {
           console.log(error);
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
-  
   //Fungsi untuk mendapatkan IP dan nama device
   const getData = async () => {
     const res = await axios.get('https://geolocation-db.com/json/')
