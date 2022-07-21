@@ -84,7 +84,7 @@ function DetailNews() {
             <div>
               <p className="detail-news-title">{NewsDetail.title}</p>
               <img 
-              class="thePicture" 
+              class="the-picture-detail" 
               src={NewsDetail.image_file_data}
               alt="NewsPhoto"/>
               <div dangerouslySetInnerHTML={{

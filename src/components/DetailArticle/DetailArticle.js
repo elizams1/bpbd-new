@@ -86,7 +86,7 @@ function DetailArticle(){
               <div>
                 <p className="detail-article-title">{ArticleDetail.title}</p>
                 <img 
-                class="thePicture" 
+                class="the-picture-detail" 
                 src={ArticleDetail.image_file_data}
                 alt="ArticlePhoto"/>
                 <div dangerouslySetInnerHTML={{

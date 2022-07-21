@@ -19,3 +19,8 @@
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.the-picture-detail{
+  width : 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
