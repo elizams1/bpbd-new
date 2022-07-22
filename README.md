@@ -8,12 +8,12 @@ Selanjutnya mengakses server via SSH menggunakan terminal dengan perintah `ssh u
 
 ## Melakukan git clone pada folder /var/www/html/
 Melakukan git clone dengan url github repository yang berisi aplikasi react pada folder /var/www/html/ 
-- Step 1 : cd /var/www/html/ 
-- Step 2 : sudo git clone URL-git-repo
+- Step 1 : `cd /var/www/html/`
+- Step 2 : `sudo git clone URL-git-repo`
 
 ## Masuk ke folder repo yang telah di clone untuk build
 Selanjutnya masuk ke folder yang berisi aplikasi react untuk melakukan build dengan langkah langkah berikut :
-- Step 1 : cd nama-folder/
-- Step 2 : sudo npm install
-- Step 3 : sudo npm start
-- Step 4 : sudo npm run build
+- Step 1 : `cd nama-folder/`
+- Step 2 : `sudo npm install`
+- Step 3 : `sudo npm start`
+- Step 4 : `sudo npm run build`
