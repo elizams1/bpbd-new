@@ -21,7 +21,7 @@ Selanjutnya masuk ke folder yang berisi aplikasi react untuk melakukan build den
 ## Masuk ke projectnya
 Setelah melakukan build, dapat masuk ke folder project `cd nama-folder/` 
 
-##Menjalankan folder Build dengan PM2
+## Menjalankan folder Build dengan PM2
 selanjutnya menjalankan folder build dengan perintah `pm2 serve build/ nomor_port --name "sesuai dengan nama project" --spa` spa = single page aplication. Hal ini dilakukan untuk pm2 menjalankan build folder bpbd dengan port sekian. Nomor port disesuaikan dan pastikan berbeda.
 
 ## Melihat proyek yang berjalan
