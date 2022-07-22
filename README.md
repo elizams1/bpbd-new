@@ -34,8 +34,8 @@ Menggunakan perintah `pm2 delete nama_project` untuk menghapus project yang seda
 menggunakan perintah `cd /etc/nginx/conf.d/` untuk mengubah kode port menjadi domain
 
 ## Menjalankan server blok
-`sudo cp nama_server_blok nama_server_blok_baru` : perintahuntuk meng-copy server blok yang sudah ada menjadi sebuah server blok baru
-`sudo nano nama_server_blok` : perintah untuk membuat server blok baru secara manual
-'sudo mv nama_server_blok_lama nama_server_blok_baru` : perintah untuk mengganti nama server blok
-`sudo systemctl reload nginx` : untuk melakukan reload pada server blok
-`sudo systemctl restart nginx` : untuk melakukan restart pada server blok
+- `sudo cp nama_server_blok nama_server_blok_baru` : perintahuntuk meng-copy server blok yang sudah ada menjadi sebuah server blok baru
+- `sudo nano nama_server_blok` : perintah untuk membuat server blok baru secara manual
+- `sudo mv nama_server_blok_lama nama_server_blok_baru` : perintah untuk mengganti nama server blok
+- `sudo systemctl reload nginx` : untuk melakukan reload pada server blok
+- `sudo systemctl restart nginx` : untuk melakukan restart pada server blok
