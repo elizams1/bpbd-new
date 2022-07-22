@@ -11,7 +11,7 @@ function Document(){
   useEffect(() => {
     setloading(true);
     axios
-      .get("http://adminmesuji.embuncode.com/api/dokumen?instansi_id=15")
+      .get("http://adminmesuji.embuncode.com/api/dokumen?instansi_id=31")
       .then(function (doc) {
         setDocumentData(doc.data.data.data);
         console.log("console header: " + doc.data.data.data);

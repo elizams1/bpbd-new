@@ -235,12 +235,14 @@ function Home() {
               NewsData.map(item => 
                 <Link to={{ pathname: '/news/' + item.id }} className="the-detail-news-home">
                   <div className="the-detail-news-home-2">
-                      <img
-                        className="the-picture2"
-                        src={item.image_file_data}
-                        alt="the-detail-news"
-                      />
-                      <div>
+                      <div className="the-div-pict">
+                          <img
+                          className="the-picture2"
+                          src={item.image_file_data}
+                          alt="the-detail-news"
+                        />
+                      </div>
+                      <div className="the-detail-pict"> 
                         <p className="textDetails3">{item.title}</p>
                         <p className="textIntro3">{item.intro}</p>
                       </div>
@@ -263,15 +265,18 @@ function Home() {
                 ArticleData.map(item => 
                 <Link to={{ pathname:'/article/' + item.id}} className="the-detail-article">
                   <div className="the-detail-article-2" >
-                    <div>
+                    <div className="the-detail-pict">
                       <p className="textDetails2">{item.title}</p>
                       <p className="textIntro2">{item.intro}</p>
                     </div>
-                    <img
-                      className="the-picture2"
-                      src={item.image_file_data}
-                      alt="the-detail-article"
-                    />
+                    <div className="the-div-pict">
+                      <img
+                        className="the-picture2"
+                        src={item.image_file_data}
+                        alt="the-detail-article"
+                      />
+                    </div>
+                    
                   </div>
                 </Link>               
               )

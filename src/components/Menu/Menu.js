@@ -63,74 +63,130 @@ function TheMenu(){
           </Link>
           <div className="the-list-menu">
             {MenuData.map(item=>
-            <Menu>
-              {({isOpen})=>(
-                <>
-                  {
-                    item.url != null ?
-                    <Link to={""+item.url}>
-                      <MenuButton 
-                      px={2}
-                      py={2}
-                      transition='all 0.2s'
-                      color='white'
-                      fontSize="xl"
-                      
-                      _hover={{ bg: 'white', borderRadius:'10px', color:'#075098' }}
-                      _expanded={{ bg: 'white', color:'#075098',  borderRadius:'10px' }}
-                      // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
-                    isActive={isOpen}
-                    > 
-                      {isOpen ? item.name : item.name}
-                    </MenuButton>
-                  </Link> : 
+              <Menu>
+                {({isOpen})=>(
                   <>
-                    <MenuButton 
-                      px={2}
-                      py={2}
-                      transition='all 0.2s'
-                      color='white'
-                      fontSize="xl"
-                      
-                      _hover={{ bg: 'white', borderRadius:'10px', color:'#075098' }}
-                      _expanded={{ bg: 'white', color:'#075098',  borderRadius:'10px' }}
-                      // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
-                    isActive={isOpen}
-                    > 
-                      {isOpen ? item.name : item.name}
-                    </MenuButton>
+                    {
+                      item.url != null ?
+                      <Link to={""+item.url}>
+                        <MenuButton 
+                        px={2}
+                        py={2}
+                        transition='all 0.2s'
+                        color='white'
+                        fontSize="xl"
+                        
+                        _hover={{ bg: 'white', borderRadius:'10px', color:'#075098' }}
+                        _expanded={{ bg: 'white', color:'#075098',  borderRadius:'10px' }}
+                        // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
+                      isActive={isOpen}
+                      > 
+                        {isOpen ? item.name : item.name}
+                        </MenuButton>
+                      </Link> : 
+                      <MenuButton 
+                        px={2}
+                        py={2}
+                        transition='all 0.2s'
+                        color='white'
+                        fontSize="xl"
+                        
+                        _hover={{ bg: 'white', borderRadius:'10px', color:'#075098' }}
+                        _expanded={{ bg: 'white', color:'#075098',  borderRadius:'10px' }}
+                        // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
+                      isActive={isOpen}
+                      > 
+                        {isOpen ? item.name : item.name}
+                      </MenuButton>
+                    }
+                    { item.children.length > 0 ? 
+                      <MenuList className="drpdown-1">
+                        {item.children.map(child =>
+                        <>
+                          <Menu>
+                            {({ isOpen }) => (
+                              <>
+                                {child.url != null || child.static_page != null ? 
+                                  <>
+                                  { child.url != null ? 
+                                    <Link to={""+child.url}>
+                                        <MenuButton 
+                                        px={2}
+                                        py={2}
+                                        transition='all 0.2s'
+                                        isActive={isOpen} 
+                                        fontSize="xl"
+                                        color='#075098'
+                                        _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button2">
+                                          {isOpen ? child.name : child.name}
+                                        </MenuButton>
+                                    </Link> 
+                                    : 
+                                    <Link to={"/static/"+child.static_page}>
+                                        <MenuButton 
+                                        px={2}
+                                        py={2}
+                                        transition='all 0.2s'
+                                        isActive={isOpen} 
+                                        fontSize="xl"
+                                        color='#075098'
+                                        _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button2">
+                                          {isOpen ? child.name : child.name}
+                                        </MenuButton>
+                                    </Link>
+                                  }
+                                  </>
+                                  :
+                                  <MenuButton 
+                                    px={2}
+                                    py={2}
+                                    transition='all 0.2s'
+                                    isActive={isOpen} 
+                                    fontSize="xl"
+                                    color='#075098'
+                                    _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button" >
+                                      {isOpen ? child.name : child.name}
+                                  </MenuButton>
+                                }
+                                {child.children.length > 0 ? 
+                                  <MenuList> 
+                                    {child.children.map(childs =>
+                                    <>
+                                      {childs.static_page != null ? 
+                                        <Link to={"/static/"+childs.static_page}>
+                                          <MenuItem 
+                                            fontSize="xl"
+                                            color='#075098'
+                                            shadow='lg'
+                                            _hover={{ bg: 'aliceblue', color:'#075098' }}
+                                          >{childs.name}</MenuItem>
+                                        </Link>
+                                        : 
+                                        <Link to={""+childs.url}>
+                                          <MenuItem 
+                                            fontSize="xl"
+                                            color='#075098'
+                                            _hover={{ bg: 'aliceblue', color:'#075098' }}
+                                          >{childs.name}</MenuItem>
+                                        </Link>
+                                      }
+                                    </>
+                                    )}
+                                  </MenuList>
+                                  : null
+                                }
+                              </>
+                            )}
+                          </Menu>
+                        </>
+                        )}
+                      </MenuList>
+                      : null
+                    }
                   </>
-                  }
-                  { item.children.length > 0 ? 
-                    <MenuList>
-                      {item.children.map(child =>
-                      <>
-                        {child.static_page != null ? 
-                          <Link to={"/static/"+child.static_page}>
-                            <MenuItem 
-                              fontSize="xl"
-                              color='#075098'
-                              _hover={{ bg: 'aliceblue', color:'#075098' }}
-                            >{child.name}</MenuItem>
-                          </Link>
-                          : 
-                          <Link to={""+child.url}>
-                            <MenuItem 
-                              fontSize="xl"
-                              color='#075098'
-                              _hover={{ bg: 'aliceblue', color:'#075098' }}
-                            >{child.name}</MenuItem>
-                          </Link>
-                        }
-                      </>
-                      )}
-                    </MenuList>
-                     : null
-                  }
-                </>
-              )}
-            </Menu>        
-          )}
+                )}
+              </Menu>        
+            )}
           </div>
         </div>
         <div className="the-menu-2">
@@ -161,8 +217,27 @@ function TheMenu(){
                       <Menu>
                         {({isOpen})=>(
                           <>
-                          {item.url !=null ?  
-                            <Link to={""+item.url}>
+                            {
+                              item.url != null ?
+                              <Link to={""+item.url}>
+                                <MenuButton 
+                                px={2}
+                                py={2}
+                                transition='all 0.2s'
+                                display='flex'
+                                marginBottom="10px"
+                                fontSize="xl"
+                                textTransform='uppercase'
+                                width= '100%'
+                                textAlign="center"
+                                _hover={{ bg: '#075098', borderRadius:'10px', color:'white' }}
+                                _expanded={{boxShadow: 'outline', borderRadius:'10px' }}
+                                // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
+                                isActive={isOpen}
+                              > 
+                                {isOpen ? item.name : item.name}
+                                </MenuButton>
+                              </Link> : 
                               <MenuButton 
                                 px={2}
                                 py={2}
@@ -176,69 +251,95 @@ function TheMenu(){
                                 _hover={{ bg: '#075098', borderRadius:'10px', color:'white' }}
                                 _expanded={{boxShadow: 'outline', borderRadius:'10px' }}
                                 // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
-                              isActive={isOpen}
+                                isActive={isOpen}
                               > 
                                 {isOpen ? item.name : item.name}
                               </MenuButton>
-                              { item.children.length > 0 ? 
-                                <MenuList  
-                                >
-                                  {item.children.map(child =>
-                                    <MenuItem 
-                                      color='#075098'
-                                      fontSize="xl"
-                                    >{child.name}</MenuItem>
-                                  )}
-                                </MenuList> : null
-                              }
-                            </Link>
-                            : 
-                            <>
-                              <MenuButton 
-                                px={2}
-                                py={2}
-                                transition='all 0.2s'
-                                display='flex'
-                                marginBottom="10px"
-                                fontSize="xl"
-                                textTransform='uppercase'
-                                width= '100%'
-                                textAlign="center"
-                                _hover={{ bg: '#075098', borderRadius:'10px', color:'white' }}
-                                _expanded={{boxShadow: 'outline', borderRadius:'10px' }}
-                                // _focus={{ boxShadow: 'outline', borderRadius:'10px' }}
-                              isActive={isOpen}
-                              > 
-                                {isOpen ? item.name : item.name}
-                              </MenuButton>
-                            </>
-                          }
-                          { item.children.length > 0 ? 
-                            <MenuList>
-                              {item.children.map(child =>
-                              <>
-                                {child.static_page != null ? 
-                                  <Link to={"/static/"+child.static_page}>
-                                    <MenuItem 
-                                      fontSize="xl"
-                                      color='#075098'
-                                      _hover={{ bg: 'aliceblue', color:'#075098' }}
-                                    >{child.name}</MenuItem>
-                                  </Link>
-                                  : 
-                                  <Link to={""+child.url}>
-                                    <MenuItem 
-                                      fontSize="xl"
-                                      color='#075098'
-                                      _hover={{ bg: 'aliceblue', color:'#075098' }}
-                                    >{child.name}</MenuItem>
-                                  </Link>
-                                }
-                              </>
-                              )}
-                            </MenuList>
-                            : null
-                          }
+                            }
+                            { item.children.length > 0 ? 
+                              <MenuList className="drpdown-1">
+                                {item.children.map(child =>
+                                <>
+                                  <Menu>
+                                    {({ isOpen }) => (
+                                      <>
+                                        {child.url != null || child.static_page != null ? 
+                                          <>
+                                          { child.url != null ? 
+                                            <Link to={""+child.url}>
+                                                <MenuButton 
+                                                px={2}
+                                                py={2}
+                                                transition='all 0.2s'
+                                                isActive={isOpen} 
+                                                fontSize="xl"
+                                                color='#075098'
+                                                _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button2">
+                                                  {isOpen ? child.name : child.name}
+                                                </MenuButton>
+                                            </Link> 
+                                            : 
+                                            <Link to={"/static/"+child.static_page}>
+                                                <MenuButton 
+                                                px={2}
+                                                py={2}
+                                                transition='all 0.2s'
+                                                isActive={isOpen} 
+                                                fontSize="xl"
+                                                color='#075098'
+                                                _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button2">
+                                                  {isOpen ? child.name : child.name}
+                                                </MenuButton>
+                                            </Link>
+                                          }
+                                          </>
+                                          :
+                                          <MenuButton 
+                                            px={2}
+                                            py={2}
+                                            transition='all 0.2s'
+                                            isActive={isOpen} 
+                                            fontSize="xl"
+                                            color='#075098'
+                                            _hover={{ bg: 'aliceblue', color:'#075098' }} className="the-list-button" >
+                                              {isOpen ? child.name : child.name}
+                                          </MenuButton>
+                                        }
+                                        {child.children.length > 0 ? 
+                                          <MenuList> 
+                                            {child.children.map(childs =>
+                                            <>
+                                              {childs.static_page != null ? 
+                                                <Link to={"/static/"+childs.static_page}>
+                                                  <MenuItem 
+                                                    fontSize="xl"
+                                                    color='#075098'
+                                                    shadow='lg'
+                                                    _hover={{ bg: 'aliceblue', color:'#075098' }}
+                                                  >{childs.name}</MenuItem>
+                                                </Link>
+                                                : 
+                                                <Link to={""+childs.url}>
+                                                  <MenuItem 
+                                                    fontSize="xl"
+                                                    color='#075098'
+                                                    _hover={{ bg: 'aliceblue', color:'#075098' }}
+                                                  >{childs.name}</MenuItem>
+                                                </Link>
+                                              }
+                                            </>
+                                            )}
+                                          </MenuList>
+                                          : null
+                                        }
+                                      </>
+                                    )}
+                                  </Menu>
+                                </>
+                                )}
+                              </MenuList>
+                              : null
+                            }
                           </>
                         )}
                       </Menu>        
